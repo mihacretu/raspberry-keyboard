@@ -1,0 +1,46 @@
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# Coverage
+.coverage
+.pytest_cache/
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Environment variables
+.env
+.env.*
+
+# Runtime files
+*.pid
+
+# Temporary
+tmp/
+temp/

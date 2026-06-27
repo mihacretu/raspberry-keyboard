@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mivi Agent</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card hero">
+      <div>
+        <p class="eyebrow">Mivi Agent</p>
+        <h1>Remote Keyboard</h1>
+        <p class="muted">Send text and commands to the Windows PC connected by USB.</p>
+      </div>
+
+      <div class="status">
+        <span class="dot"></span>
+        <span>{{ status }}</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Type text</h2>
+
+      <form method="post" action="/ui/type">
+        <textarea name="text" placeholder="hello world!" autofocus></textarea>
+        <button type="submit">Send text</button>
+      </form>
+
+      <p class="hint">
+        Supports letters, numbers, spaces, Enter, comma, dot, question mark, exclamation mark and common punctuation.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Commands</h2>
+
+      <div class="grid">
+        <form method="post" action="/ui/command/select-all"><button>Select all</button></form>
+        <form method="post" action="/ui/command/copy"><button>Copy</button></form>
+        <form method="post" action="/ui/command/paste"><button>Paste</button></form>
+        <form method="post" action="/ui/command/delete"><button>Delete</button></form>
+        <form method="post" action="/ui/command/backspace"><button>Backspace</button></form>
+        <form method="post" action="/ui/command/enter"><button>Enter</button></form>
+        <form method="post" action="/ui/command/tab"><button>Tab</button></form>
+        <form method="post" action="/ui/command/escape"><button>Escape</button></form>
+      </div>
+    </section>
+
+    <section class="card footer">
+      <a href="/docs">Open Swagger API</a>
+      <a href="/health">Health JSON</a>
+    </section>
+  </main>
+</body>
+</html>
