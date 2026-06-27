@@ -46,8 +46,34 @@
         <form method="post" action="/ui/command/tab"><button>Tab</button></form>
         <form method="post" action="/ui/command/escape"><button>Escape</button></form>
       </div>
-    </section>
+      <div class="arrow-pad">
+        <div></div>
+        <form method="post" action="/ui/command/up"><button>↑</button></form>
+        <div></div>
 
+        <form method="post" action="/ui/command/left"><button>←</button></form>
+        <form method="post" action="/ui/command/down"><button>↓</button></form>
+        <form method="post" action="/ui/command/right"><button>→</button></form>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Windows Navigation</h2>
+
+      <div class="grid">
+        <form method="post" action="/ui/command/alt-tab"><button>Alt + Tab</button></form>
+        <form method="post" action="/ui/command/win-tab"><button>Win + Tab</button></form>
+        <form method="post" action="/ui/command/win-d"><button>Show Desktop</button></form>
+        <form method="post" action="/ui/command/win-e"><button>File Explorer</button></form>
+        <form method="post" action="/ui/command/win-r"><button>Run</button></form>
+        <form method="post" action="/ui/command/alt-f4"><button>Close App</button></form>
+        <form method="post" action="/ui/command/ctrl-esc"><button>Start Menu</button></form>
+        <form method="post" action="/ui/command/task-manager"><button>Task Manager</button></form>
+        <form method="post" action="/ui/command/snap-left"><button>Snap Left</button></form>
+        <form method="post" action="/ui/command/snap-right"><button>Snap Right</button></form>
+        <form method="post" action="/ui/command/maximize"><button>Maximize</button></form>
+        <form method="post" action="/ui/command/minimize"><button>Minimize</button></form>
+      </div>
+    </section>
     <section class="card footer">
       <a href="/docs">Open Swagger API</a>
       <a href="/health">Health JSON</a>

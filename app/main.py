@@ -50,25 +50,40 @@ def ui_type_text(text: str = Form(...)):
 def run_command(command_name: str):
     command_name = command_name.lower()
 
-    if command_name == "select-all":
-        keyboard.select_all()
-    elif command_name == "copy":
-        keyboard.copy()
-    elif command_name == "paste":
-        keyboard.paste()
-    elif command_name == "delete":
-        keyboard.delete()
-    elif command_name == "backspace":
-        keyboard.backspace()
-    elif command_name == "enter":
-        keyboard.press_key("enter")
-    elif command_name == "tab":
-        keyboard.press_key("tab")
-    elif command_name == "escape":
-        keyboard.press_key("escape")
-    else:
+    commands = {
+        "select-all": lambda: keyboard.select_all(),
+        "copy": lambda: keyboard.copy(),
+        "paste": lambda: keyboard.paste(),
+        "delete": lambda: keyboard.delete(),
+        "backspace": lambda: keyboard.backspace(),
+        "enter": lambda: keyboard.press_key("enter"),
+        "tab": lambda: keyboard.press_key("tab"),
+        "escape": lambda: keyboard.press_key("escape"),
+
+        "up": lambda: keyboard.press_key("up"),
+        "down": lambda: keyboard.press_key("down"),
+        "left": lambda: keyboard.press_key("left"),
+        "right": lambda: keyboard.press_key("right"),
+
+        "alt-tab": lambda: keyboard.hotkey("alt", "tab"),
+        "win-tab": lambda: keyboard.hotkey("win", "tab"),
+        "win-d": lambda: keyboard.hotkey("win", "d"),
+        "win-e": lambda: keyboard.hotkey("win", "e"),
+        "win-r": lambda: keyboard.hotkey("win", "r"),
+        "alt-f4": lambda: keyboard.hotkey("alt", "f4"),
+        "ctrl-esc": lambda: keyboard.hotkey("ctrl", "escape"),
+        "task-manager": lambda: keyboard.hotkey("ctrl", "shift", "escape"),
+
+        "snap-left": lambda: keyboard.hotkey("win", "left"),
+        "snap-right": lambda: keyboard.hotkey("win", "right"),
+        "maximize": lambda: keyboard.hotkey("win", "up"),
+        "minimize": lambda: keyboard.hotkey("win", "down"),
+    }
+
+    if command_name not in commands:
         return {"success": False, "error": f"Unsupported command: {command_name}"}
 
+    commands[command_name]()
     return {"success": True, "command": command_name}
 
 
